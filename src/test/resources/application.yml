@@ -1,0 +1,8 @@
+whitelist:
+  scopes:
+    scope_1:
+      desc: 测试用的
+      whitelist: [ user_a,
+                   user_b ]
+      blacklist: [ user_c ]
+      percent: 30

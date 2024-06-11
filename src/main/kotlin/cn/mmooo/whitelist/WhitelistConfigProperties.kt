@@ -6,7 +6,8 @@ import org.springframework.cloud.context.config.annotation.*
 @RefreshScope
 @ConfigurationProperties(prefix = "whitelist")
 open class WhitelistConfigProperties {
-    var scopes: Map<String, WConf> = mapOf()
+    var scopes: Map<String, WConf> = hashMapOf()
+
     override fun toString(): String {
         return "WhitelistConfigProperties(scopes=$scopes)"
     }
@@ -18,9 +19,10 @@ open class WhitelistConfigProperties {
      */
     data class WConf(
         var desc: String = "",
-        var whitelist: Set<String> = setOf(),
-        var blacklist: Set<String> = setOf(),
+        var whitelist: Set<String> = hashSetOf(),
+        var blacklist: Set<String> = hashSetOf(),
         var percent: Int = 0,
+        var data: Map<String, String> = hashMapOf(),
     )
 
 

@@ -3,7 +3,7 @@
 ## 项目说明
 本项目源于 XSYX-DBQ 同学的 whitelist 中间件
 
-原项目基于 Apollo 配置中心， 由 zuisong 改造为基于 spring-cloud-config， 使用 kotlin 重写
+原项目基于 Apollo 配置中心，后改造为基于 spring-cloud-config，使用 kotlin 重写
 
 保持了和原项目一样的使用接口
 
@@ -115,6 +115,11 @@ whitelist:
 
 使用方法
 ```java
+import cn.mmooo.whitelist.WhiteListClient;
+import org.springframework.context.ApplicationContext;
+
+private ApplicationContext context;
+
 WhiteListClient whiteListClient = context.getBean(WhiteListClient.class);
 // user_a 在白名单中, 直接返回 true
 assert whiteListClient.isInWhiteList("scope_1", "user_a") == true;

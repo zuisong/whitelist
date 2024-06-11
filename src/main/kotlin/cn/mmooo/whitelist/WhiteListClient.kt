@@ -23,8 +23,6 @@ open class WhiteListClient {
      * 维度
      * @param subject
      * 用户
-     * @param mode
-     * 模式
      * @return
      */
     fun isInWhiteList(
@@ -48,6 +46,10 @@ open class WhiteListClient {
             // 代码出差错了不能影响业务
             false
         }
+    }
+
+    fun getData(scope: String): Map<String, String> {
+        return whiteListConfig.scopes[scope]?.data ?: mapOf()
     }
 
     /**

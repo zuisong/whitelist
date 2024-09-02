@@ -35,7 +35,7 @@ open class WhiteListClient {
                 // 在白名单里直接返回 true
                 getResultInByWhitelist(subject = subject, scope = scope) -> true
                 // 在黑名单里直接返回 false
-                checkInBlacklist(scope, subject) -> false
+                checkInBlacklist(subject = subject, scope = scope) -> false
                 // 如果是兼容模式,那么就先在白名单里面找,不匹配就去进行百分比算法
                 else -> getResultByPercentAlgorithm(subject = subject, scope = scope)
             }
